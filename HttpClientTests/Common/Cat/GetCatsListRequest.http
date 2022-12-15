@@ -1,0 +1,2 @@
+﻿GET https://localhost:7020/api/Cat/GetList
+Accept: application/json
