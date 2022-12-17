@@ -25,5 +25,19 @@ public class UserRepository : IUserRepository
         await _dbContext.Users.AddAsync(user);
         return user;
     }
+
+    public async Task<List<User>> GetListAsync() => await _dbContext.Users.ToListAsync();
+
+    public async Task UpdateAsync(User user)
+    {
+        _dbContext.Update(user);
+        await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(User user)
+    {
+        _dbContext.Remove(user);
+        await _dbContext.SaveChangesAsync();
+    }
     
 }

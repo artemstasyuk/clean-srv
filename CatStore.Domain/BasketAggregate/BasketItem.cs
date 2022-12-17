@@ -1,9 +1,11 @@
 using Ardalis.GuardClauses;
+using Newtonsoft.Json;
 
 namespace CatStore.Domain.BasketAggregate;
 
 public class BasketItem 
 {
+    public Guid Id { get; set; }
     public decimal UnitPrice { get; set; }
     
     public Guid CatId { get; set; }
@@ -11,15 +13,18 @@ public class BasketItem
     public int Quantity { get; set; }
     
 
-    public BasketItem(Guid catId, int quantity,  decimal unitPrice)
+    
+    [JsonConstructor]
+    public BasketItem(Guid id, Guid catId, int quantity,  decimal unitPrice)
     {
+        Id = id;
         CatId = catId;
-        SetQuantity(quantity);
+        Quantity = quantity;
         UnitPrice = unitPrice;
     }
-
+    
     public static BasketItem Create(Guid catId, int quantity, decimal unitPrice) =>
-        new BasketItem(catId, quantity, unitPrice);
+        new BasketItem(Guid.NewGuid(), catId, quantity, unitPrice);
     
     public void AddQuantity(int quantity)
     {
@@ -29,12 +34,5 @@ public class BasketItem
     }
 
     public void DecreaseQuantity() => Quantity -= 1;
-    
-    public void SetQuantity(int quantity)
-    {
-        Guard.Against.OutOfRange(quantity, nameof(quantity), 0, int.MaxValue);
-
-        Quantity = quantity;
-    }
     
 }

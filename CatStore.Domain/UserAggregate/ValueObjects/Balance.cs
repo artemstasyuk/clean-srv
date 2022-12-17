@@ -16,13 +16,16 @@ public class Balance : ValueObject
     }
 
     public static Balance Create(Currency currency, decimal amount) => 
-        new Balance(currency, amount);
+        new(currency, amount);
+    
+    public void Replenishment(decimal balance) => Amount += balance;
+
+    public void Debit(decimal balance) => Amount -= balance;
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Currency;
         yield return Amount;
     }
-
 
 }

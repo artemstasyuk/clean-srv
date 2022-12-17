@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using CatStore.Application.Common.Behavior;
-using CatStore.Application.Mapper;
+using CatStore.Application.Common.Mapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

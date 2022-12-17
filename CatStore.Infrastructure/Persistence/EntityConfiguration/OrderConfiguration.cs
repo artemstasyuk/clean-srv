@@ -1,7 +1,6 @@
 using System.Text.Json;
 using CatStore.Domain.OrderAggregate;
 using CatStore.Domain.OrderAggregate.ValuesObject;
-using CatStore.Domain.UserAggregate.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

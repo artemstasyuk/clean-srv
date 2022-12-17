@@ -44,7 +44,7 @@ public class Cat
         ImageUrl = imageUrl;
         Price = price;
         Description = description;
-        UpdatedDateTime = DateTime.Now;
+        UpdatedDateTime = DateTime.UtcNow;
         
 
         return this;

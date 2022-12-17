@@ -13,9 +13,9 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     {
 
         // Test snippets 
-        User.Create("Artem", "Admin", "admin@gmail.com", "admin",
+        User.Create("Artem", "Admin", "admin@gmail.com", BCrypt.Net.BCrypt.HashPassword("admin2007"),
             Balance.Create(Currency.Euro, 1000), Role.Admin),
-        User.Create("Joe", "Biden", "joe@gmail.com", "joe",
+        User.Create("Joe", "Biden", "joe@gmail.com", BCrypt.Net.BCrypt.HashPassword("joe2004"),
             Balance.Create(Currency.Euro, 100), Role.Customer), 
     };
     

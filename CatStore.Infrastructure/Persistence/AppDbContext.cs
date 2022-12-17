@@ -1,6 +1,5 @@
 ﻿using CatStore.Domain.CatAggregate;
 using CatStore.Domain.OrderAggregate;
-using CatStore.Domain.OrderAggregate.Entity;
 using CatStore.Domain.UserAggregate;
 using CatStore.Infrastructure.Persistence.EntityConfiguration;
 using Microsoft.EntityFrameworkCore;

@@ -21,7 +21,7 @@ public  class CacheService : ICacheService
     public async Task<T> GetRedisCache<T>(string key)
     {
         var value = await _redis.StringGetAsync(key);
-        if (String.IsNullOrEmpty(value)) return default; 
+        if (value.IsNullOrEmpty) return default!; 
         return JsonConvert.DeserializeObject<T>(value);
     }
 

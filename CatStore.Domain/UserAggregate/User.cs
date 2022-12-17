@@ -40,13 +40,13 @@ public class User
     public static User Create(string firstName, string lastName, string email, string password, Balance balance, Role role) =>
         new(Guid.NewGuid(), firstName, lastName, email, password, balance, role, DateTime.UtcNow, DateTime.UtcNow);
     
-    public User Update(string firstName, string lastName, string email, Balance balance)
+    public User Update(string firstName, string lastName, string email, string password)
     {
         FirstName = firstName;
         LastName = lastName;
         Email = email;
-        Balance = balance;
-        UpdatedDateTime = DateTime.Now;
+        Password = password;
+        UpdatedDateTime = DateTime.UtcNow;
         
         return this;
     }

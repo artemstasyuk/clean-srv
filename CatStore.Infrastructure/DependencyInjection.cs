@@ -31,6 +31,7 @@ public static class DependencyInjection
 
         services.AddTransient<ICatRepository, CatRepository>();
         services.AddTransient<IUserRepository, UserRepository>();
+        services.AddTransient<IOrderRepository, OrderRepository>();
 
         services.AddScoped<ICacheService, CacheService>();
 

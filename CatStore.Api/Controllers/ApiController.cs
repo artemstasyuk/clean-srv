@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace CatStore.Api.Controllers;
 
 [ApiController]
+[Authorize]
 public class ApiController : ControllerBase
 {
     protected IActionResult Problem(List<Error> errors)

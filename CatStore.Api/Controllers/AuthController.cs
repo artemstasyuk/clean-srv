@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CatStore.Application.Dtos.Auth;
-using CatStore.Application.MediaR.Authentication.Commands.Register;
-using CatStore.Application.MediaR.Authentication.Queries.Login;
+using CatStore.Application.Authentication.Commands.Register;
+using CatStore.Application.Authentication.Queries.Login;
+using CatStore.Application.Common.Dtos.Auth;
 using CatStore.Domain.Common.Errors;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -30,8 +30,8 @@ public class AuthController : ApiController
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromForm]RegisterDto registerDto)
     {
-        var command = _mapper.Map<RegisterCommand>(registerDto); 
-        var registerReuslt = await _mediator.Send(command);
+        var registerReuslt = await _mediator.Send(
+            _mapper.Map<RegisterCommand>(registerDto));
 
         return registerReuslt.Match(
             authResult => Ok(_mapper.Map<AuthenticationResponse>(authResult)),
@@ -46,8 +46,8 @@ public class AuthController : ApiController
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromForm]LoginDto loginDto)
     {
-        var query = _mapper.Map<LoginQuery>(loginDto);
-        var loginResult = await _mediator.Send(query);
+        var loginResult = await _mediator.Send(
+            _mapper.Map<LoginQuery>(loginDto));
         
         if (loginResult.IsError && loginResult.FirstError == Errors.Authentication.InvalidCredentials)
             return Problem(

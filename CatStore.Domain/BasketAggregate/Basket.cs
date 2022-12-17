@@ -1,24 +1,44 @@
+using Newtonsoft.Json;
+
 namespace CatStore.Domain.BasketAggregate;
 
 public class Basket 
 {
     private readonly List<BasketItem> _items = new();
     
-    public Guid Id { get; set; }
+    public Guid Id { get; private set; }
     
-    public Guid UserId { get; set; }
+    public Guid UserId { get; private set; }
 
-    public int ItemsAmount => _items.Count();
-    
-    public decimal TotalPrice => CalculateTotalPrice;
+    public int ItemsAmount {
+        get => _items.Count;
+        init { if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value)); }
+    }
+
+    public decimal TotalPrice {
+        get => CalculateTotalPrice();
+        init { if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value)); }
+    }
 
     public IReadOnlyList<BasketItem> Items => _items.AsReadOnly();
 
-    public decimal CalculateTotalPrice => _items.Sum(i => i.UnitPrice * i.Quantity);
+    public decimal CalculateTotalPrice() => _items.Sum(i => i.UnitPrice * i.Quantity);
+
+
     public Basket(Guid id, Guid userId)
     {
         Id = id;
         UserId = userId;
+    }
+    
+    [JsonConstructor]
+    public Basket(Guid id, Guid userId,int itemsAmount, decimal totalPrice, List<BasketItem> items)
+    {
+        Id = id;
+        UserId = userId;
+        ItemsAmount = itemsAmount;
+        TotalPrice = totalPrice;
+        _items = items;
     }
 
     public static Basket Create(Guid userId) =>
@@ -34,16 +54,10 @@ public class Basket
         existingItem.AddQuantity(quantity);
     }
     
-    public void DecreaseItemQuantity(Guid catId)
-    {
-        var item = Items.First(itm => itm.CatId == catId);
-        if (item.Quantity == 1) _items.Remove(item);
-        item.DecreaseQuantity();
-    }
 
-    public void RemoveItem(Guid catId)
+    public void RemoveItem(Guid itemId)
     {
-        var item = Items.First(itm => itm.CatId == catId);
+        var item = Items.First(itm => itm.Id == itemId);
         _items.Remove(item);
     }
     
