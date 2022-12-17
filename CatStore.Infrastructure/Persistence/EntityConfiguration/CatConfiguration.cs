@@ -16,13 +16,12 @@ public class CatConfiguration : IEntityTypeConfiguration<Cat>
         Cat.Create("GamerCat", Sex.Male,string.Empty,  4,"Often play Dota2"),
         Cat.Create("ArinaCat", Sex.Female, string.Empty, 1, "Just a fat femenistic cat")
     };
-
-
+    
     public void Configure(EntityTypeBuilder<Cat> builder)
     {
         builder.ToTable("cats");
 
-        builder.Property(cat => cat.Id).IsRequired();
+        builder.Property(c => c.Id).IsRequired();
         builder.Property(c => c.Name).IsRequired();
         builder.Property(c => c.Price).IsRequired();
         builder.Property(c => c.Description).IsRequired();

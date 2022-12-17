@@ -1,3 +1,6 @@
+using CatStore.Domain.OrderAggregate.Entity;
+using CatStore.Domain.OrderAggregate.ValuesObject;
+
 namespace CatStore.Domain.OrderAggregate;
 
 public class Order

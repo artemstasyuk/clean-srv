@@ -2,7 +2,7 @@ using AutoMapper;
 using CatStore.Application.Mapper;
 using CatStore.Domain.BasketAggregate;
 
-namespace CatStore.Application.Dtos.Baskets;
+namespace CatStore.Application.MediaR.Baskets.Common;
 
 public class BasketDto : IMapWith<Basket>
 {
@@ -16,10 +16,9 @@ public class BasketDto : IMapWith<Basket>
     public decimal TotalPrice { get; set; }
 
     public IReadOnlyList<BasketItem> Items { get; set; }
-    
+
     public void Mapping(Profile profile) =>
-        profile.CreateMap<Basket, BasketDto>()
-            .ReverseMap();
-    
-    
+        profile.CreateMap<Basket, BasketDto>().ReverseMap();
+
+
 }

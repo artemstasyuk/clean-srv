@@ -1,9 +1,11 @@
+using System.Text.Json;
 using CatStore.Domain.UserAggregate;
 using CatStore.Domain.UserAggregate.Enums;
+using CatStore.Domain.UserAggregate.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CatStore.Infrastructure.Persistence.EntityConfiguration;
+ namespace CatStore.Infrastructure.Persistence.EntityConfiguration;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
@@ -22,21 +24,18 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.ToTable("users");
         
-        builder.Property(user => user.Id).IsRequired();
-        builder.Property(c => c.FirstName).IsRequired();
-        builder.Property(c => c.LastName).IsRequired();
-        builder.Property(c => c.Email).IsRequired();
-        builder.Property(c => c.Password).IsRequired();
-        builder.Property(c => c.Role).IsRequired();
-        builder.Property(c => c.Balance)
+        builder.Property(u => u.Balance)
             .HasConversion(
-                amount => amount.Amount,
-                
-                
-
-            .IsRequired();
-        builder.Property(c => c.CreatedDateTime).IsRequired();
-        builder.Property(c => c.UpdatedDateTime).IsRequired();
+                v => JsonSerializer.Serialize(v, null as JsonSerializerOptions),
+                v => JsonSerializer.Deserialize<Balance>(v, null as JsonSerializerOptions)!);
+        builder.Property(u => u.Id).IsRequired();
+        builder.Property(u => u.FirstName).IsRequired();
+        builder.Property(u => u.LastName).IsRequired();
+        builder.Property(u => u.Email).IsRequired();
+        builder.Property(u => u.Password).IsRequired();
+        builder.Property(u => u.Role).IsRequired();
+        builder.Property(u => u.CreatedDateTime).IsRequired();
+        builder.Property(u => u.UpdatedDateTime).IsRequired();
 
         builder.HasData(_users);
     }

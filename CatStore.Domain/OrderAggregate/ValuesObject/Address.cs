@@ -1,6 +1,8 @@
-namespace CatStore.Domain.OrderAggregate;
+using CatStore.Domain.Common.Models;
 
-public class Address
+namespace CatStore.Domain.OrderAggregate.ValuesObject;
+
+public class Address : ValueObject
 {
     public string Country { get; private set; }
     public string City { get; private set; }
@@ -17,5 +19,14 @@ public class Address
 
     public static Address Create(string country, string city, string street, string houseNumber) => 
         new(country, city,  street, houseNumber);
+    
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Country;
+        yield return City;
+        yield return Street;
+        yield return HouseNumber;
+    }
+
     
 }

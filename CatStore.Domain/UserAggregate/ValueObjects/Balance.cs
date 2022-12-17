@@ -1,14 +1,15 @@
+using CatStore.Domain.Common.Models;
 using CatStore.Domain.UserAggregate.Enums;
 
-namespace CatStore.Domain.UserAggregate;
+namespace CatStore.Domain.UserAggregate.ValueObjects;
 
-public class Balance
+public class Balance : ValueObject
 {
     public Currency Currency { get; private set; }
     
     public decimal Amount { get; private set; }
 
-    private Balance(Currency currency, decimal amount)
+    public Balance(Currency  currency, decimal amount)
     {
         Currency = currency;
         Amount = amount;
@@ -16,6 +17,12 @@ public class Balance
 
     public static Balance Create(Currency currency, decimal amount) => 
         new Balance(currency, amount);
+
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Currency;
+        yield return Amount;
+    }
 
 
 }

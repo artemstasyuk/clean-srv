@@ -18,13 +18,13 @@ public class CatRepository : ICatRepository
         await _dbContext.AddAsync(cat);
         await _dbContext.SaveChangesAsync();
     }
-    
+
     public async Task DeleteAsync(Cat cat)
     {
         _dbContext.Remove(cat);
         await _dbContext.SaveChangesAsync();
     }
-    
+
     public async Task<List<Cat>> GetListAsync() => await _dbContext.Cats.ToListAsync();
 
     public async Task<Cat?> GetByIdAsync(Guid id) =>
@@ -36,3 +36,4 @@ public class CatRepository : ICatRepository
         await _dbContext.SaveChangesAsync();
     }
 }
+    

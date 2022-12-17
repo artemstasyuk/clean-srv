@@ -5,7 +5,52 @@
     <projectFile profileName="IIS Express">CatStore.Api/CatStore.Api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca9c23bc-9761-4fc4-b991-948d48867a31" name="Changes" comment="" />
+    <list default="true" id="ca9c23bc-9761-4fc4-b991-948d48867a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CatStore.Api/Controllers/OrderController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/Common/Interfaces/Persistence/IOrderRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/AddItem/AddItemCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/ClearItems/ClearItemsCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/ClearItems/ClearItemsCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/ClearItems/ClearItemsCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/DecreaseItemQuantity/DecreaseItemQuantityCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/DecreaseItemQuantity/DecreaseItemQuantityCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/DecreaseItemQuantity/DecreaseItemQuantityCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/RemoveItem/RemoveItemCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Queries/GetBasket/GetBasketQueryValidation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/EntityConfiguration/OrderConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/Repositories/OrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatStore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Api/CatStore.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Api/CatStore.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Api/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Api/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Api/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Api/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/CatStore.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/CatStore.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/AddItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/AddItemDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/BasketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Common/BasketDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/GetBasketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/DecreaseItemQuantityDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/RemoveItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/Dtos/Baskets/RemoveItemDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/MediaR/Authentication/Commands/Register/RegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Authentication/Commands/Register/RegisterCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/AddItem/AddItemCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/AddItem/AddItemCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/RemoveItem/RemoveItemCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/RemoveItem/RemoveItemCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/RemoveItem/RemoveItemCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Commands/RemoveItem/RemoveItemCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Queries/GetBasket/GetBasketQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Queries/GetBasket/GetBasketQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Queries/GetBasket/GetBasketQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Application/MediaR/Baskets/Queries/GetBasket/GetBasketQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/BasketAggregate/Basket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/BasketAggregate/Basket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/BasketAggregate/BasketItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/BasketAggregate/BasketItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/CatStore.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/CatStore.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/OrderAggregate/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/OrderAggregate/ValuesObject/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/OrderAggregate/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/OrderAggregate/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/OrderAggregate/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/OrderAggregate/OrderItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/UserAggregate/Balance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/UserAggregate/ValueObjects/Balance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Domain/UserAggregate/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Domain/UserAggregate/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/CatStore.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/CatStore.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/EntityConfiguration/CatConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/EntityConfiguration/CatConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/EntityConfiguration/UserConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/EntityConfiguration/UserConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/Repositories/CatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Persistence/Repositories/CatRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Infrastructure/Services/RedisCacheControlService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Infrastructure/Cache/RedisCacheControlService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatStore.Tests/CatStore.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CatStore.Tests/CatStore.Tests.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +72,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6cc6dede52aab6345bbde5d36881fd55b017f53c84c78824d182f9a62c8291f/ISender.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8a639b1c6ead1ce788567832dcda050359f8a6c714d7e44e6b2074feabed98/NpgsqlTimestampTzTypeMapping.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ea828ecade990e734efaeed875732552144166cbef844dfca077e91b3e6e/ModelValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9b8313fc8d2cdb81deca7a49a6a876f8c757fbdef4d15998af099272eda8183/ConstructorBindingFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c2c72555df485eaeb73d76e6b4e7c39bfdc9fe8148df42d482ecce9aa755bd2/ApiBehaviorApplicationModelProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de1a13165ad62655c59fc1ee38d3477aa4f48f0b2769c5d6aa95accb3ca826f/ConnectionMultiplexer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ebdd49af422acbcddf451341710904929235e4a6c499cfe83ddc4163cb6227/EndpointMethodInfoApiExplorerServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4708639776589f5ac2739f6fcbfc67343b1f9dac51cc1dbfdb003eef77cc1c/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CatStore.Application/Dtos/Cat/CatListDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CatStore.Application/Dtos/Cat/CreateCatDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CatStore.Infrastructure/Persistence/Repositories/OrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
@@ -41,9 +89,12 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2IRuD7OQySpdyNQwSuELrs5H2Qq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,6 +105,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.49772382",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
@@ -143,6 +195,9 @@
       <workItem from="1670922565731" duration="3688000" />
       <workItem from="1671074417832" duration="6042000" />
       <workItem from="1671094093483" duration="14220000" />
+      <workItem from="1671109934453" duration="6013000" />
+      <workItem from="1671181905110" duration="11735000" />
+      <workItem from="1671257780516" duration="6072000" />
     </task>
     <servers />
   </component>
@@ -158,7 +213,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CatStore.Application/MediaR/Authentication/Commands/Register/RegisterCommandHandler.cs</url>
-          <line>23</line>
+          <line>24</line>
           <properties documentPath="D:\Temis\Prj\CatStore\CatStore.Application\MediaR\Authentication\Commands\Register\RegisterCommandHandler.cs" initialLine="23" containingFunctionPresentation="method 'Handle'">
             <startOffsets>
               <option value="947" />

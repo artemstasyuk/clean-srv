@@ -12,23 +12,31 @@ public class AddItemCommandHandler : IRequestHandler<AddItemCommand,ErrorOr<Bask
 {
     private readonly ICacheService _cacheService;
     private readonly IUserRepository _userRepository;
+    private readonly ICatRepository _catRepository;
+    private readonly IMapper _mapper;
     
-    public AddItemCommandHandler(ICacheService cacheService, IUserRepository userRepository)
+    public AddItemCommandHandler(ICacheService cacheService, IUserRepository userRepository, ICatRepository catRepository, IMapper mapper)
     {
         _cacheService = cacheService;
         _userRepository = userRepository;
+        _catRepository = catRepository;
+        _mapper = mapper;
     }
 
     public async Task<ErrorOr<Basket>> Handle(AddItemCommand command, CancellationToken cancellationToken)
     {
-        if (await _userRepository.GetByIdAsync(command.UserId) is not { } user)
+        if (await _userRepository.GetByIdAsync(command.UserId) is not {} user)
             return Errors.User.NotFound;
+
+        var basket = await _cacheService.GetRedisCache<Basket>(user.Id.ToString())
+            ?? Basket.Create(user.Id);
+
+        if ( await _catRepository.GetByIdAsync(command.CatId) is not { } )
+            return Errors.Cat.NotFound;
         
-        var basket = await _cacheService.GetRedisCache<Basket>("basket")
-                     ?? Basket.Create(command.UserId);
         basket.AddItem(command.CatId, command.UnitPrice, command.Quantity);
 
-        await _cacheService.SetRedisCache("basket", basket);
+        await _cacheService.SetRedisCache(user.Id.ToString(), basket);
 
         return basket;
     }

@@ -5,6 +5,7 @@ using CatStore.Application.MediaR.Authentication.Common;
 using CatStore.Domain.Common.Errors;
 using CatStore.Domain.UserAggregate;
 using CatStore.Domain.UserAggregate.Enums;
+using CatStore.Domain.UserAggregate.ValueObjects;
 using MediatR;
 
 namespace CatStore.Application.MediaR.Authentication.Commands.Register;

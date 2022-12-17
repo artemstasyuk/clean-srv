@@ -1,8 +1,9 @@
 ﻿using CatStore.Domain.UserAggregate.Enums;
+using CatStore.Domain.UserAggregate.ValueObjects;
 
 namespace CatStore.Domain.UserAggregate;
 
-public class User
+public class User 
 {
     public Guid Id { get; private set; }
     

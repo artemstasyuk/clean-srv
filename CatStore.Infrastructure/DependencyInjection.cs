@@ -3,9 +3,9 @@ using CatStore.Application.Common.Interfaces.Auth;
 using CatStore.Application.Common.Interfaces.Cache;
 using CatStore.Application.Common.Interfaces.Persistence;
 using CatStore.Infrastructure.Authentication;
+using CatStore.Infrastructure.Cache;
 using CatStore.Infrastructure.Persistence;
 using CatStore.Infrastructure.Persistence.Repositories;
-using CatStore.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -39,7 +39,7 @@ public static class DependencyInjection
         configuration.Bind(JwtSettings.SectionName, jwtSettings);
     
         services.AddSingleton(Options.Create(jwtSettings));
-        services.AddTransient<IJwtTokenGenerator, JwtTokenGenerator>();
+        services.AddTransient< IJwtTokenGenerator, JwtTokenGenerator>();
 
         services.AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters

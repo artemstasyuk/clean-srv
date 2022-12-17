@@ -27,18 +27,26 @@ public class Basket
     public void AddItem(Guid catId, decimal unitPrice, int quantity)
     {
         if (!Items.Any(itm => itm.CatId == catId)){
-            _items.Add(new BasketItem(catId, quantity, unitPrice));
+            _items.Add(BasketItem.Create(catId, quantity, unitPrice));
             return;
         }
         var existingItem = Items.First(itm => itm.CatId == catId);
         existingItem.AddQuantity(quantity);
     }
     
-    public void RemoveEmptyItems()
+    public void DecreaseItemQuantity(Guid catId)
     {
-        _items.RemoveAll(i => i.Quantity == 0);
+        var item = Items.First(itm => itm.CatId == catId);
+        if (item.Quantity == 1) _items.Remove(item);
+        item.DecreaseQuantity();
     }
 
+    public void RemoveItem(Guid catId)
+    {
+        var item = Items.First(itm => itm.CatId == catId);
+        _items.Remove(item);
+    }
+    
     public void Clear() => _items.Clear();
 
 }

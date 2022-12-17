@@ -29,7 +29,7 @@ public class AdminController : ApiController
     /// </summary>
     /// <param name="dto"></param>
     /// <returns></returns>
-    [HttpPut("update")]
+    [HttpPut("cat/update")]
     public async Task<ActionResult> UpdateCat([FromForm] UpdateCatDto dto)
     {
         await _mediator.Send(_mapper.Map<UpdateCatCommand>(dto));
@@ -42,7 +42,7 @@ public class AdminController : ApiController
     /// </summary>
     /// <param name="id"></param>
     /// <returns>Cat.Id</returns>
-    [HttpDelete("delete/{id:guid}")]
+    [HttpDelete("cat/delete/{id:guid}")]
     public async Task<ActionResult> DeleteCat(Guid id)
     {
         await _mediator.Send(new DeleteCatCommand() { Id = id });
@@ -61,4 +61,6 @@ public class AdminController : ApiController
         await _mediator.Send(_mapper.Map<CreateCatCommand>(dto));
         return Ok();
     }
+    
+    //TODO user delete, update
 }

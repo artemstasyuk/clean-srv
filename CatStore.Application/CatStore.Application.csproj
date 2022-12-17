@@ -23,7 +23,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="MediaR\Order" />
+      <Folder Include="MediaR\Order\Commands\CreateOrder" />
+      <Folder Include="MediaR\Order\Commands\DeleteOrder" />
+      <Folder Include="MediaR\Order\Commands\UpdateOrder" />
+      <Folder Include="MediaR\Order\Queries\GetAllOrders" />
+      <Folder Include="MediaR\Order\Queries\GetAllOrdersByCustomerId" />
+      <Folder Include="MediaR\Order\Queries\GetOrderById" />
     </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ using Ardalis.GuardClauses;
 
 namespace CatStore.Domain.BasketAggregate;
 
-public class BasketItem
+public class BasketItem 
 {
     public decimal UnitPrice { get; set; }
     
@@ -17,6 +17,9 @@ public class BasketItem
         SetQuantity(quantity);
         UnitPrice = unitPrice;
     }
+
+    public static BasketItem Create(Guid catId, int quantity, decimal unitPrice) =>
+        new BasketItem(catId, quantity, unitPrice);
     
     public void AddQuantity(int quantity)
     {
@@ -24,6 +27,8 @@ public class BasketItem
 
         Quantity += quantity;
     }
+
+    public void DecreaseQuantity() => Quantity -= 1;
     
     public void SetQuantity(int quantity)
     {
