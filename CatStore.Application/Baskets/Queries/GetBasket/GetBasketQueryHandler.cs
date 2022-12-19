@@ -25,11 +25,8 @@ public class GetBasketQueryHandler : IRequestHandler<GetBasketQuery, ErrorOr<Bas
 
         var basket = await _cacheService.GetRedisCache<Basket>(user.Id.ToString());
 
-        if (basket is not null) return basket;
+        if (basket is null) return Errors.Basket.BasketEmpty;
 
-        var voidBasket = Basket.Create(user.Id);
-        await _cacheService.SetRedisCache(user.Id.ToString(), voidBasket);
-
-        return voidBasket;
+        return basket;
     }
 }
