@@ -1,20 +1,20 @@
 
-# REST, Domain Driven Design, Clean Architecture
+## REST, Domain Driven Design, Clean Architecture
 
-# Stack: 
+## Stack: 
 
 ASP NET Core Web API, PostreSQL, EF Core, MediatR, Mapster, Redis, ErrorOr, Fluent API and Validation, Swagger, xUnit
 
-# Implemented: 
+## Implemented: 
 
 JWT bearer authentication, role-based authorization, division into commands/requests, global error handling, validation, model mapping,
 shopping cart(distributed cache), admin panel, unit tests
 
-#Used patterns 
+##Used patterns 
 
 CQRS, Repository
 
-#How to Launch
+##How to Launch
 Install and launch Redis docker image 
 ```bash
 docker run -p 6379:6379 --name redis-master -e REDIS_REPLICATION_MODE=master -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest
