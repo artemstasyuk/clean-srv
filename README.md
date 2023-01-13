@@ -1,4 +1,4 @@
-## Pet store api
+## API for Pet Store
 
 #### REST, Domain Driven Design, Clean Architecture
 
