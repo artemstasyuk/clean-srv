@@ -1,6 +1,0 @@
-﻿GET https://localhost:7020/api/Cat/GetCatById/{{id:int}}
-Content-Type: application/json
-{ 
-  "id" : "1"
-}
-
